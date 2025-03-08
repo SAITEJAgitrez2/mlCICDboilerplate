@@ -7,3 +7,8 @@ update components
 update pipeline
 update main.py
 update app.py
+
+
+## AWS
+ECR repo URI:
+273354631502.dkr.ecr.us-east-1.amazonaws.com/mlcicd
