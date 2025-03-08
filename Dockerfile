@@ -1,10 +1,18 @@
 FROM python:3.8-slim-buster
 
-RUN apt update -y && apt install awscli -y
+# Install necessary system dependencies
+RUN apt update -y && apt install -y \
+    awscli \
+    gcc \
+    libzstd-dev \
+    python3-dev \
+    build-essential
+
 WORKDIR /app
 
 COPY . /app
 
+RUN pip install --upgrade pip  # Upgrade pip
 RUN pip install -r requirements.txt
 RUN pip install --upgrade accelerate
 RUN pip uninstall -y transformers accelerate
